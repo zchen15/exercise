@@ -42,6 +42,8 @@ def main():
     out = []
     for f in args.infiles:
         # add exception handling in case the function fails to execute on a particular file for any reason
+        if args.verbose:
+            print('processing',f)
         try:
             x = count_mutated_reads(f, args.quality)
             out.append(x)
